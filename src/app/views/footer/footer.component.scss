@@ -1,0 +1,17 @@
+.button {
+  background-color: #3f51b5;
+  color: white !important;
+  width: 100px;
+}
+
+.button:disabled {
+    opacity: .5;
+}
+
+.button-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 25px;
+}

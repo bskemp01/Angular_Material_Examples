@@ -1,1 +1,78 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Angular_Materials_Examples-primary: mat.define-palette(mat.$indigo-palette);
+$Angular_Materials_Examples-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
+
+// The warn palette is optional (defaults to red).
+$Angular_Materials_Examples-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Angular_Materials_Examples-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $Angular_Materials_Examples-primary,
+      accent: $Angular_Materials_Examples-accent,
+      warn: $Angular_Materials_Examples-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Angular_Materials_Examples-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, Noto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-title {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.0125em;
+  line-height: 32px;
+}
+
+.text-body {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.0178571429em;
+  line-height: 20px;
+}
+
+// body {
+//   --q-accent-color: #ee8515 !important;
+//   --q-body-bg-color: #f5f5f5 !important;
+//   --q-error-color: #970009 !important;
+//   --q-primary-color: #1972b9 !important;
+//   --q-primary-color-on-bg: #1972b9 !important;
+//   --q-primary-color-dark-on-bg: #1254aa !important;
+//   --q-primary-color-selected: #e3eef7 !important;
+//   --q-primary-color-dark: #1254aa !important;
+// }
