@@ -66,6 +66,14 @@ body {
   line-height: 20px;
 }
 
+.title-container {
+  align-items: center;
+  border-bottom: solid 1px black;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+}
+
 // body {
 //   --q-accent-color: #ee8515 !important;
 //   --q-body-bg-color: #f5f5f5 !important;

@@ -1,0 +1,82 @@
+<div class="title-container">
+  <span class="text-title">Material Forms & Mat-Select</span>
+</div>
+<div class="forms-page-container">
+  <form class="forms-container" [formGroup]="exampleForm">
+    <div class="names-container">
+      <mat-form-field class="first-name-fields-container">
+        <mat-label>First Name</mat-label>
+        <input matInput class="first-name-input" formControlName="firstName" />
+      </mat-form-field>
+
+      <mat-form-field class="last-name-fields-container">
+        <mat-label>Last Name</mat-label>
+        <input matInput class="last-name-input" formControlName="lastName" />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="address-container">
+      <mat-label>Address</mat-label>
+      <input matInput class="address-input" formControlName="address" />
+    </mat-form-field>
+
+    <div class="city-state-container">
+      <mat-form-field class="city-container">
+        <mat-label>City</mat-label>
+        <input matInput class="city-input" formControlName="city" />
+      </mat-form-field>
+
+      <mat-form-field class="state-container">
+        <mat-label>State</mat-label>
+        <mat-select formControlName="state">
+          <mat-option *ngFor="let state of statesList" [value]="state">{{
+            state
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="zipcode-container">
+      <mat-label>Zip Code</mat-label>
+      <input
+        matInput
+        class="zipcode-input"
+        maxlength="5"
+        placeholder="Ex. 12345"
+        formControlName="zipCode"
+      />
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-button (click)="resetForm()" class="button">
+        Reset Form
+      </button>
+      <button mat-button (click)="submitForm()" class="button">
+        Submit Form
+      </button>
+    </div>
+  </form>
+
+  <div class="display-form-container" *ngIf="isFormFilled">
+    <span
+      *ngIf="
+        exampleForm.controls.firstName.value ||
+        exampleForm.controls.lastName.value
+      "
+    >
+      Name: {{ exampleFormList.firstName }} {{ exampleFormList.lastName }}
+    </span>
+    <span *ngIf="exampleForm.controls.address.value"
+      >Address: {{ exampleFormList.address }}</span
+    >
+    <span
+      *ngIf="
+        exampleForm.controls.city.value || exampleForm.controls.state.value
+      "
+      >City/State: {{ exampleFormList.city }}/{{ exampleFormList.state }}</span
+    >
+    <span *ngIf="exampleForm.controls.zipCode.value"
+      >Zip Code: {{ exampleFormList.zipCode }}</span
+    >
+  </div>
+</div>
