@@ -1,0 +1,86 @@
+.meat-button,
+.sauce-button {
+  background-color: red;
+  color: white !important;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.veggie-button {
+  background-color: green;
+  color: white !important;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.mat-menu-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.menu-buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.menu-list-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mat-list-item {
+  align-items: center;
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  height: 35px !important;
+  justify-content: space-between;
+  margin-top: 5px;
+
+  &.selectedTopping {
+    background-color: green;
+  }
+}
+
+.menu-box,
+.order-box {
+  align-items: center;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: flex-start;
+  padding: 5px 10px;
+  width: 45%;
+}
+
+.order-area {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.pizza-title {
+  align-items: center;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  width: 100%;
+}

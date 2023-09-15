@@ -1,4 +1,5 @@
 export enum PageTypes {
-    MatTabs = 'mat-tabs',
-    Forms = 'forms'
+    MAT_TABS = 'mat-tabs',
+    FORMS = 'forms',
+    MENUS = 'menus'
 }

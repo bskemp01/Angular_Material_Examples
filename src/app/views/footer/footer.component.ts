@@ -31,14 +31,17 @@ export class FooterComponent {
   }
 
   prevPage() {
-    if (this.currentPage === PageTypes.Forms) {
-      this.routingService.navigateRoutes(PageTypes.MatTabs);
+    if (this.currentPage === PageTypes.FORMS) {
+      this.routingService.navigateRoutes(PageTypes.MAT_TABS);
     }
   }
 
   nextPage() {
-    if (this.currentPage === PageTypes.MatTabs) {
-      this.routingService.navigateRoutes(PageTypes.Forms);
+    if (this.currentPage === PageTypes.MAT_TABS) {
+      this.routingService.navigateRoutes(PageTypes.FORMS);
+    }
+    if (this.currentPage === PageTypes.FORMS) {
+      this.routingService.navigateRoutes(PageTypes.MENUS);
     }
   }
 }

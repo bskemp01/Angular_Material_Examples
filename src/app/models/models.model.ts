@@ -6,3 +6,8 @@ export interface ExampleForm {
   state?: string;
   zipCode?: number | null;
 }
+
+export interface pizzaToppingsModel {
+    topping: string;
+    selected: boolean;
+}

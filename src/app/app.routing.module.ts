@@ -13,6 +13,11 @@ const routes: Routes = [
       import('./views/forms/form.module').then((m) => m.FormModule),
   },
   {
+    path: 'menus',
+    loadChildren: () =>
+      import('./views/menus/menus.module').then((m) => m.MenusModule),
+  },
+  {
     path: '**',
     redirectTo: 'mat-tabs',
   },

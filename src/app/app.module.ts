@@ -9,6 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app.routing.module';
 import { MatToolBarComponent } from './views/mat-tool-bar/mat-tool-bar.component';
 import { FooterComponent } from './views/footer/footer.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [AppComponent, MatToolBarComponent, FooterComponent],
@@ -18,6 +19,7 @@ import { FooterComponent } from './views/footer/footer.component';
     BrowserModule,
     MatButtonModule,
     MatIconModule,
+    MatMenuModule,
     MatToolbarModule,
   ],
   providers: [],

@@ -1,1 +1,96 @@
-<p>menus works!</p>
+<div class="title-container">
+  <span class="text-title">Mat-Menus & Mat-Checkboes & Mat-Lists</span>
+</div>
+<div class="mat-menu-container">
+  <span class="text-title pizza-title">Make Your Own Pizza</span>
+  <div class="order-area">
+    <div class="menu-box">
+      <span class="text-title">Toppings Selection</span>
+      <div class="menu-buttons">
+        <button
+          class="meat-button text-body"
+          mat-button
+          [matMenuTriggerFor]="meatMenu"
+        >
+          Meat Toppings<mat-icon matSuffix>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu class="mat-menu" #meatMenu="matMenu">
+          <mat-checkbox
+            *ngFor="let meat of meatToppings"
+            (click)="$event.stopPropagation()"
+            [checked]="meat.selected"
+            (change)="selectTopping(meat, $event)"
+            >{{ meat.topping }}</mat-checkbox
+          >
+        </mat-menu>
+
+        <button
+          class="veggie-button text-body"
+          mat-button
+          [matMenuTriggerFor]="veggieMenu"
+        >
+          Veggie Toppings<mat-icon matSuffix>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #veggieMenu="matMenu">
+          <mat-checkbox
+            *ngFor="let veggie of veggieToppings"
+            (click)="$event.stopPropagation()"
+            [checked]="veggie.selected"
+            (change)="selectTopping(veggie, $event)"
+            >{{ veggie.topping }}</mat-checkbox
+          >
+        </mat-menu>
+
+        <button
+          class="sauce-button text-body"
+          mat-button
+          [matMenuTriggerFor]="sauceMenu"
+        >
+          Sauce Options<mat-icon matSuffix>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #sauceMenu="matMenu">
+          <mat-checkbox
+            *ngFor="let sauce of sauceToppings"
+            (click)="$event.stopPropagation()"
+            [checked]="sauce.selected"
+            (change)="selectTopping(sauce, $event)"
+            >{{ sauce.topping }}</mat-checkbox
+          >
+        </mat-menu>
+      </div>
+    </div>
+    <div class="order-box">
+      <span class="text-title">Toppings Selection</span>
+      <div class="menu-list-container">
+        <mat-list role="list">
+          <mat-list-item
+            class="text-body mat-list-item"
+            [ngClass]="{ selectedTopping: meat.selected }"
+            role="listitem"
+            *ngFor="let meat of meatToppings"
+            >{{ meat.topping }}</mat-list-item
+          >
+        </mat-list>
+
+        <mat-list role="list">
+          <mat-list-item
+            class="text-body mat-list-item"
+            [ngClass]="{ selectedTopping: veggie.selected }"
+            role="listitem"
+            *ngFor="let veggie of veggieToppings"
+            >{{ veggie.topping }}</mat-list-item>
+        </mat-list>
+
+        <mat-list role="list">
+          <mat-list-item
+            class="text-body mat-list-item"
+            [ngClass]="{ selectedTopping: sauce.selected }"
+            role="listitem"
+            *ngFor="let sauce of sauceToppings"
+            >{{ sauce.topping }}</mat-list-item
+          >
+        </mat-list>
+      </div>
+    </div>
+  </div>
+</div>

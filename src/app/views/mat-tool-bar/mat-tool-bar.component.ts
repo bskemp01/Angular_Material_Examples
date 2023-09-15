@@ -14,25 +14,16 @@ export class MatToolBarComponent {
     return PageTypes;
   }
 
-  currentPage = '';
   private readonly linkedInURL =
     'https://www.linkedin.com/in/brian-kemp-94036723a/';
 
-  constructor(private router: Router, private routingService: RoutingService) {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event) => {
-        if (event instanceof NavigationEnd) {
-          this.currentPage = event.url.split('/').pop() ?? '';
-        }
-      });
-  }
+  constructor(private router: Router, private routingService: RoutingService) {}
 
   navigateToLinkedIn() {
     window.open(this.linkedInURL);
   }
 
   navigateToPage(pageType: PageTypes) {
-    this.routingService.navigateRoutes(pageType)
+    this.routingService.navigateRoutes(pageType);
   }
 }
