@@ -1,4 +1,4 @@
 <div class="button-container">
     <button mat-button class="button" (click)="prevPage()" [disabled]="currentPage === PageTypes.MAT_TABS">Prev</button>
-    <button mat-button class="button" (click)="nextPage()">Next</button>
+    <button mat-button class="button" (click)="nextPage()" [disabled]="currentPage === PageTypes.MENUS">Next</button>
 </div>
