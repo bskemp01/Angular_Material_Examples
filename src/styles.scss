@@ -84,8 +84,10 @@ body {
   width: 200px;
 }
 
-.mdc-list-item__primary-text {
-  color: white !important;
+app-menus {
+  .mdc-list-item__primary-text {
+    color: white !important;
+  }
 }
 
 // body {
